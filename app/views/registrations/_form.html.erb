@@ -1,0 +1,129 @@
+<%= form_for @registration, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :first, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :first, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :last, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :last, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :last2, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :last2, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :career, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :career, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :level, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :level, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :email, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :ci, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :ci, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :city, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :city, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :direction, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :direction, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :zona, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :zona, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :telephone, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :telephone, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :cellphone, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :cellphone, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :other, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :other, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :health, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :health, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :apoderado, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :apoderado, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :parentesco, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :parentesco, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :telephoneapoderado, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :telephoneapoderado, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :directionapoderado, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :directionapoderado, :class => 'text_field' %>
+    </div>
+  </div>
+
+
+
+<% for conference in Conference.find(:all) %>
+        <div>
+                <%= check_box_tag "registration[conference_ids][]", conference.id, @registration.conferences.include?(conference)  %>
+                <%= conference.name %>
+                
+        </div>
+   <% end %>
+
+
+
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                registrations_path, :class => 'btn' %>
+  </div>
+<% end %>

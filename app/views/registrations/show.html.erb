@@ -1,0 +1,55 @@
+<%- model_class = Registration -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:first) %>:</strong></dt>
+  <dd><%= @registration.first %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:last) %>:</strong></dt>
+  <dd><%= @registration.last %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:last2) %>:</strong></dt>
+  <dd><%= @registration.last2 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:career) %>:</strong></dt>
+  <dd><%= @registration.career %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:level) %>:</strong></dt>
+  <dd><%= @registration.level %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+  <dd><%= @registration.email %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:ci) %>:</strong></dt>
+  <dd><%= @registration.ci %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:city) %>:</strong></dt>
+  <dd><%= @registration.city %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:direction) %>:</strong></dt>
+  <dd><%= @registration.direction %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:zona) %>:</strong></dt>
+  <dd><%= @registration.zona %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:telephone) %>:</strong></dt>
+  <dd><%= @registration.telephone %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:cellphone) %>:</strong></dt>
+  <dd><%= @registration.cellphone %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:other) %>:</strong></dt>
+  <dd><%= @registration.other %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:health) %>:</strong></dt>
+  <dd><%= @registration.health %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:apoderado) %>:</strong></dt>
+  <dd><%= @registration.apoderado %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:parentesco) %>:</strong></dt>
+  <dd><%= @registration.parentesco %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:telephoneapoderado) %>:</strong></dt>
+  <dd><%= @registration.telephoneapoderado %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:directionapoderado) %>:</strong></dt>
+  <dd><%= @registration.directionapoderado %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              registrations_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_registration_path(@registration), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              registration_path(@registration),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
